@@ -10,9 +10,11 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark "
 		role="navigation">
-ffsfdss
 		<a class="navbar-brand" href="#"><img src="img/logo/logo.png"
 			height="50px"></a>
+		<button class="navbar-toggler border-0" type="button"
+				data-toggle="collapse" data-target="#exCollapsingNavbar">
+				&#9776;</button>
 		
 		<div class="container">
 
