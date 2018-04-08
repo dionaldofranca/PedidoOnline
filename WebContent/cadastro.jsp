@@ -13,9 +13,9 @@
 		<a class="navbar-brand" href="#"><img src="img/logo/logo.png"
 			height="50px"></a>
 		<button class="navbar-toggler border-0" type="button"
-				data-toggle="collapse" data-target="#exCollapsingNavbar">
-				&#9776;</button>
-		
+			data-toggle="collapse" data-target="#exCollapsingNavbar">
+			&#9776;</button>
+
 		<div class="container">
 
 			<div class="collapse navbar-collapse" id="exCollapsingNavbar">
@@ -111,7 +111,8 @@
 							<label class="col-lg-3 col-form-label form-control-label">CPF
 								ou CNPJ:</label>
 							<div class="col-lg-9">
-								<input class="form-control" type="text" name="cpfcnpj" pattern="[0-9]+$" required="required" >
+								<input class="form-control" type="text" name="cpfcnpj"
+									pattern="[0-9]+$" required="required">
 							</div>
 						</div>
 
@@ -123,11 +124,57 @@
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Telefone:</label>
+							<label class="col-lg-3 col-form-label form-control-label">Endereço:</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="text" name="endereco">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-lg-3 col-form-label form-control-label">Cidade:</label>
 							<div class="col-lg-9">
 								<input class="form-control" type="text" name="telefone">
 							</div>
 						</div>
+						
+						<div class="form-group row">
+							<label class="col-lg-3 col-form-label form-control-label">Cep:</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="number" name="telefone">
+							</div>
+						</div>
+
+						Estado:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						<select id="estado">
+							<option value="">Selecione</option>
+							<option value="AC">Acre</option>
+							<option value="AL">Alagoas</option>
+							<option value="AP">Amapá</option>
+							<option value="AM">Amazonas</option>
+							<option value="BA">Bahia</option>
+							<option value="CE">Ceará</option>
+							<option value="DF">Distrito Federal</option>
+							<option value="ES">Espirito Santo</option>
+							<option value="GO">Goiás</option>
+							<option value="MA">Maranhão</option>
+							<option value="MS">Mato Grosso do Sul</option>
+							<option value="MT">Mato Grosso</option>
+							<option value="MG">Minas Gerais</option>
+							<option value="PA">Pará</option>
+							<option value="PB">Paraíba</option>
+							<option value="PR">Paraná</option>
+							<option value="PE">Pernambuco</option>
+							<option value="PI">Piauí</option>
+							<option value="RJ">Rio de Janeiro</option>
+							<option value="RN">Rio Grande do Norte</option>
+							<option value="RS">Rio Grande do Sul</option>
+							<option value="RO">Rondônia</option>
+							<option value="RR">Roraima</option>
+							<option value="SC">Santa Catarina</option>
+							<option value="SP">São Paulo</option>
+							<option value="SE">Sergipe</option>
+							<option value="TO">Tocantins</option>
+						</select><br><br>
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Celular:</label>
@@ -142,18 +189,19 @@
 								<input class="form-control" type="email" name="email">
 							</div>
 						</div>
-						
-						
-							<div >
-								<input type="hidden" name="tipousuario" value="3">
-							</div>
-					
+
+
+						<div>
+							<input type="hidden" name="tipousuario" value="3">
+						</div>
+
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label"></label>
 							<div class="col-lg-9">
-								<input type="button" class="btn btn-secondary" value="Cancelar" onclick="window.location.href='index.jsp'">
-								<input type="submit" class="btn btn-primary" value="Cadastre-se">
+								<input type="button" class="btn btn-secondary" value="Cancelar"
+									onclick="window.location.href='index.jsp'"> <input
+									type="submit" class="btn btn-primary" value="Cadastre-se">
 							</div>
 						</div>
 					</form>
