@@ -43,11 +43,13 @@
 									role="form">
 									<div class="form-group">
 										<input id="UsuarioInput" placeholder="Usuario"
-											class="form-control form-control-sm" type="text" required="">
+											class="form-control form-control-sm" type="text"
+											required="required">
 									</div>
 									<div class="form-group">
 										<input id="SenhaInput" placeholder="Senha"
-											class="form-control form-control-sm" type="text" required="">
+											class="form-control form-control-sm" type="text"
+											required="required">
 									</div>
 									<div class="form-group">
 										<button type="submit" class="btn btn-primary btn-block">Entrar</button>
@@ -80,29 +82,32 @@
 				</div>
 				<div class="card-body">
 					<form class="form" role="form" autocomplete="off">
+
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Usuário:</label>
-							<div class="col-lg-9">
-								<input class="form-control" type="text" name="login">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Senha:</label>
-							<div class="col-lg-9">
-								<input class="form-control" type="password" name="senha">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Digite
-								novamente:</label>
-							<div class="col-lg-9">
-								<input class="form-control" type="password" name="repetesenha">
+							<div class="col-lg-8">
+								<input class="form-control" type="text" name="usuario"
+									minlength="5" maxlength="10">
 							</div>
 						</div>
 
 						<div class="form-group row">
+							<label class="col-lg-3 col-form-label form-control-label">Senha:</label>
+							<div class="col-lg-3">
+								<input class="form-control" type="password" name="senha"
+									minlength="6" maxlength="8">
+							</div>
+							<label class="col-lg-2 col-form-label form-control-label">
+								Repetir Senha:</label>
+							<div class="col-lg-3">
+								<input class="form-control" type="password" name="repetesenha">
+							</div>
+						</div>
+
+
+						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Nome:</label>
-							<div class="col-lg-9">
+							<div class="col-lg-8">
 								<input class="form-control" type="text" name="nome">
 							</div>
 						</div>
@@ -110,15 +115,16 @@
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">CPF
 								ou CNPJ:</label>
-							<div class="col-lg-9">
+							<div class="col-lg-8">
 								<input class="form-control" type="text" name="cpfcnpj"
-									pattern="[0-9]+$" required="required">
+									pattern="[0-9]+$" required="required" minlength="11"
+									maxlength="13">
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Endereço:</label>
-							<div class="col-lg-9">
+							<div class="col-lg-8">
 								<input class="form-control" type="text" name="endereco">
 							</div>
 						</div>
@@ -126,82 +132,80 @@
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Bairro:</label>
 							<div class="col-lg-3">
-								<input class="form-control" type="text" name="telefone">
+								<input class="form-control" type="text" name="bairro">
 							</div>
 							<label class="col-lg-1 col-form-label form-control-label">Cidade:</label>
-							<div class="col-lg-3">
-								<input class="form-control" type="text" name="telefone">
-							</div>	
+							<div class="col-lg-4">
+								<input class="form-control" type="text" name="cidade">
+							</div>
 						</div>
-					
+
 
 						<div class="form-group row">
-						<label class="col-lg-3 col-form-label form-control-label">Estado:</label>
-						<div class="col-lg-9">
-						<select id="estado">
-							<option value="">Selecione</option>
-							<option value="AC">Acre</option>
-							<option value="AL">Alagoas</option>
-							<option value="AP">Amapá</option>
-							<option value="AM">Amazonas</option>
-							<option value="BA">Bahia</option>
-							<option value="CE">Ceará</option>
-							<option value="DF">Distrito Federal</option>
-							<option value="ES">Espirito Santo</option>
-							<option value="GO">Goiás</option>
-							<option value="MA">Maranhão</option>
-							<option value="MS">Mato Grosso do Sul</option>
-							<option value="MT">Mato Grosso</option>
-							<option value="MG">Minas Gerais</option>
-							<option value="PA">Pará</option>
-							<option value="PB">Paraíba</option>
-							<option value="PR">Paraná</option>
-							<option value="PE">Pernambuco</option>
-							<option value="PI">Piauí</option>
-							<option value="RJ">Rio de Janeiro</option>
-							<option value="RN">Rio Grande do Norte</option>
-							<option value="RS">Rio Grande do Sul</option>
-							<option value="RO">Rondônia</option>
-							<option value="RR">Roraima</option>
-							<option value="SC">Santa Catarina</option>
-							<option value="SP">São Paulo</option>
-							<option value="SE">Sergipe</option>
-							<option value="TO">Tocantins</option>
-						</select>
-						<label class="col-lg-1 col-form-label form-control-label">Cep:</label>
-							<div class="col-lg-">
+							<label class="col-lg-3 col-form-label form-control-label">Estado:</label>
+
+							<div class="col-lg-3">
+								<select name="estado">
+									<option value="">Selecione</option>
+									<option value="AC">Acre</option>
+									<option value="AL">Alagoas</option>
+									<option value="AP">Amapá</option>
+									<option value="AM">Amazonas</option>
+									<option value="BA">Bahia</option>
+									<option value="CE">Ceará</option>
+									<option value="DF">Distrito Federal</option>
+									<option value="ES">Espirito Santo</option>
+									<option value="GO">Goiás</option>
+									<option value="MA">Maranhão</option>
+									<option value="MS">Mato Grosso do Sul</option>
+									<option value="MT">Mato Grosso</option>
+									<option value="MG">Minas Gerais</option>
+									<option value="PA">Pará</option>
+									<option value="PB">Paraíba</option>
+									<option value="PR">Paraná</option>
+									<option value="PE">Pernambuco</option>
+									<option value="PI">Piauí</option>
+									<option value="RJ">Rio de Janeiro</option>
+									<option value="RN">Rio Grande do Norte</option>
+									<option value="RS">Rio Grande do Sul</option>
+									<option value="RO">Rondônia</option>
+									<option value="RR">Roraima</option>
+									<option value="SC">Santa Catarina</option>
+									<option value="SP">São Paulo</option>
+									<option value="SE">Sergipe</option>
+									<option value="TO">Tocantins</option>
+								</select>
+							</div>
+
+							<label class="col-lg-1 col-form-label form-control-label">Cep:</label>
+							<div class="col-lg-4">
 								<input class="form-control" type="text" name="cep">
 							</div>
-						
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Cep:</label>
-							<div class="col-lg-9">
-								<input class="form-control" type="text" name="telefone">
-							</div>
+
 						</div>
 
+
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Celular:</label>
-							<div class="col-lg-9">
+							<label class="col-lg-3 col-form-label form-control-label">Telefone:</label>
+							<div class="col-lg-3">
+								<input class="form-control" type="text" name="telefone">
+							</div>
+							<label class="col-lg-1 col-form-label form-control-label">Celular:</label>
+							<div class="col-lg-4">
 								<input class="form-control" type="text" name="celular">
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">E-mail:</label>
-							<div class="col-lg-9">
+							<div class="col-lg-8">
 								<input class="form-control" type="email" name="email">
 							</div>
 						</div>
 
-
 						<div>
 							<input type="hidden" name="tipousuario" value="3">
 						</div>
-
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label"></label>
