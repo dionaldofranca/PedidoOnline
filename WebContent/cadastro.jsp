@@ -124,27 +124,20 @@
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Endereço:</label>
-							<div class="col-lg-9">
-								<input class="form-control" type="text" name="endereco">
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Cidade:</label>
-							<div class="col-lg-9">
+							<label class="col-lg-3 col-form-label form-control-label">Bairro:</label>
+							<div class="col-lg-3">
 								<input class="form-control" type="text" name="telefone">
 							</div>
+							<label class="col-lg-1 col-form-label form-control-label">Cidade:</label>
+							<div class="col-lg-3">
+								<input class="form-control" type="text" name="telefone">
+							</div>	
 						</div>
-						
-						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Cep:</label>
-							<div class="col-lg-9">
-								<input class="form-control" type="number" name="telefone">
-							</div>
-						</div>
+					
 
-						Estado:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label">Estado:</label>
+						<div class="col-lg-9">
 						<select id="estado">
 							<option value="">Selecione</option>
 							<option value="AC">Acre</option>
@@ -174,7 +167,21 @@
 							<option value="SP">São Paulo</option>
 							<option value="SE">Sergipe</option>
 							<option value="TO">Tocantins</option>
-						</select><br><br>
+						</select>
+						<label class="col-lg-1 col-form-label form-control-label">Cep:</label>
+							<div class="col-lg-">
+								<input class="form-control" type="text" name="cep">
+							</div>
+						
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label class="col-lg-3 col-form-label form-control-label">Cep:</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="text" name="telefone">
+							</div>
+						</div>
 
 						<div class="form-group row">
 							<label class="col-lg-3 col-form-label form-control-label">Celular:</label>
