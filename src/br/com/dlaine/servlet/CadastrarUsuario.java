@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.dlaine.dao.UsuarioDao;
+import br.com.dlaine.dao.EnderecoDao;
 import br.com.dlaine.model.Usuario;
+import br.com.dlaine.model.Endereco;
 
 @WebServlet(name = "CadastrarUsuario.do", urlPatterns = { "/CadastrarUsuario.do" })
 public class CadastrarUsuario extends HttpServlet {
@@ -22,18 +24,26 @@ public class CadastrarUsuario extends HttpServlet {
 		String senha = request.getParameter("senha");
 		String nome = request.getParameter("nome");
 		String cpfcnpj = request.getParameter("cpfcnpj");
-		String endereco = request.getParameter("endereco");
 		String telefone = request.getParameter("telefone");
 		String celular = request.getParameter("celular");
 		int tipousuario = Integer.parseInt(request.getParameter("tipousuario"));
 		String email = request.getParameter("email");
 
-		Usuario usuario = new Usuario (login, senha, nome, cpfcnpj, endereco, telefone, celular, tipousuario, email);
-
+		Usuario usuario = new Usuario (login, senha, nome, cpfcnpj, telefone, celular, tipousuario, email);
 		UsuarioDao usuarioDao = new UsuarioDao();
-
 		usuarioDao.insert(usuario);
+	
+		String rua = request.getParameter("endereco");
+		String bairro = request.getParameter("bairro");
+		String cidade = request.getParameter("cidade");
+		String estado = request.getParameter("estado");
+		int cep =  Integer.parseInt(request.getParameter("cep"));
 		
+		Endereco endereco = new Endereco(rua, bairro, cidade, estado, cep);
+
+		EnderecoDao enderecoDao = new EnderecoDao();
+
+		enderecoDao.insert(endereco);
 		
 	}
 

@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cadastre-se</title>
 <%@ include file="include/bootstrap.jsp"%>
+
+ <script type="text/javascript" src="js/js.js"></script>
+
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark "
@@ -39,15 +42,17 @@
 						</button>
 						<ul class="dropdown-menu dropdown-menu-right mt-1">
 							<li class="p-3">
+							
+							
 								<form action="AutenticaUsuario.do" method="post" class="form"
 									role="form">
 									<div class="form-group">
-										<input id="UsuarioInput" placeholder="Usuario"
+										<input name="usuario" placeholder="Usuario"
 											class="form-control form-control-sm" type="text"
 											required="required">
 									</div>
 									<div class="form-group">
-										<input id="SenhaInput" placeholder="Senha"
+										<input name="senha" placeholder="Senha"
 											class="form-control form-control-sm" type="text"
 											required="required">
 									</div>
@@ -55,21 +60,20 @@
 										<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 									</div>
 									<div class="form-group text-xs-center">
-										<small><a href="#">Esqueci minha senha</a></small>
+										<small><a href="esqueciSenha.jsp">Esqueci minha senha</a></small>
 									</div>
 								</form>
-
+								
+								
 							</li>
-
 						</ul>
-
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-	<form action="CadastrarUsuario.do" method="post">
+	<form name="cadastro" action="CadastrarUsuario.do" method="post" >
 
 		<div class="col-md-8 offset-md-2">
 			<span class="anchor" id="formUserEdit"></span>
@@ -84,57 +88,59 @@
 					<form class="form" role="form" autocomplete="off">
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Usuário:</label>
-							<div class="col-lg-8">
-								<input class="form-control" type="text" name="usuario"
-									minlength="5" maxlength="10">
+							<label class="col-lg-2 col-form-label form-control-label">Usuário:</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="text" name="login" minlength="5" maxlength="10">
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Senha:</label>
+							<label class="col-lg-2 col-form-label form-control-label">Senha:</label>
 							<div class="col-lg-3">
-								<input class="form-control" type="password" name="senha"
-									minlength="6" maxlength="8">
+								<input onkeyup="validarSenha()" class="form-control" type="password" name="senha" minlength="6" maxlength="8">
 							</div>
 							<label class="col-lg-2 col-form-label form-control-label">
 								Repetir Senha:</label>
 							<div class="col-lg-3">
-								<input class="form-control" type="password" name="repetesenha">
+								<input onkeyup="validarSenha()" class="form-control" type="password" name="repetesenha" minlength="6" maxlength="8">
 							</div>
 						</div>
-
-
+						
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Nome:</label>
-							<div class="col-lg-8">
+							
+							<div class="col-lg-9">
+								<p id="resultado"></p>
+							</div>
+						</div>
+					
+						<div class="form-group row">
+							<label class="col-lg-2 col-form-label form-control-label">Nome:</label>
+							<div class="col-lg-9">
 								<input class="form-control" type="text" name="nome">
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">CPF
+							<label class="col-lg-2 col-form-label form-control-label">CPF
 								ou CNPJ:</label>
-							<div class="col-lg-8">
-								<input class="form-control" type="text" name="cpfcnpj"
-									pattern="[0-9]+$" required="required" minlength="11"
-									maxlength="13">
+							<div class="col-lg-9">
+								<input class="form-control" type="text" name="cpfcnpj" pattern="[0-9]+$" required="required" minlength="11" maxlength="13">
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Endereço:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-2 col-form-label form-control-label">Endereço:</label>
+							<div class="col-lg-9">
 								<input class="form-control" type="text" name="endereco">
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Bairro:</label>
+							<label class="col-lg-2 col-form-label form-control-label">Bairro:</label>
 							<div class="col-lg-3">
 								<input class="form-control" type="text" name="bairro">
 							</div>
-							<label class="col-lg-1 col-form-label form-control-label">Cidade:</label>
+							<label class="col-lg-2 col-form-label form-control-label">Cidade:</label>
 							<div class="col-lg-4">
 								<input class="form-control" type="text" name="cidade">
 							</div>
@@ -142,10 +148,10 @@
 
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Estado:</label>
+							<label class="col-lg-2 col-form-label form-control-label">Estado:</label>
 
 							<div class="col-lg-3">
-								<select name="estado">
+								<select class="form-control" type ="text" name="estado">
 									<option value="">Selecione</option>
 									<option value="AC">Acre</option>
 									<option value="AL">Alagoas</option>
@@ -177,28 +183,27 @@
 								</select>
 							</div>
 
-							<label class="col-lg-1 col-form-label form-control-label">Cep:</label>
+							<label class="col-lg-2 col-form-label form-control-label">Cep:</label>
 							<div class="col-lg-4">
 								<input class="form-control" type="text" name="cep">
 							</div>
 
 						</div>
 
-
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">Telefone:</label>
+							<label class="col-lg-2 col-form-label form-control-label">Telefone:</label>
 							<div class="col-lg-3">
 								<input class="form-control" type="text" name="telefone">
 							</div>
-							<label class="col-lg-1 col-form-label form-control-label">Celular:</label>
+							<label class="col-lg-2 col-form-label form-control-label">Celular:</label>
 							<div class="col-lg-4">
 								<input class="form-control" type="text" name="celular">
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label class="col-lg-3 col-form-label form-control-label">E-mail:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-2 col-form-label form-control-label">E-mail:</label>
+							<div class="col-lg-9">
 								<input class="form-control" type="email" name="email">
 							</div>
 						</div>
@@ -219,8 +224,7 @@
 				</div>
 			</div>
 		</div>
-
 	</form>
-
+	<%@ include file="include/footer.jsp"%>	
 </body>
 </html>

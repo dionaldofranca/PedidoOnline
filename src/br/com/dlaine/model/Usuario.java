@@ -7,7 +7,6 @@ public class Usuario {
 	private String senha;
 	private String nome;
 	private String cpfcnpj;
-	private String endereco;
 	private String telefone;
 	private String celular;
 	private int tipousuario;
@@ -17,7 +16,7 @@ public class Usuario {
 
 	}
 
-	public Usuario(int idUsuario, String login, String senha, String nome, String cpfcnpj, String endereco,
+	public Usuario(int idUsuario, String login, String senha, String nome, String cpfcnpj,
 			String telefone, String celular, int tipousuario, String email) {
 
 		this.idUsuario = idUsuario;
@@ -25,21 +24,19 @@ public class Usuario {
 		this.senha = senha;
 		this.nome = nome;
 		this.cpfcnpj = cpfcnpj;
-		this.endereco = endereco;
 		this.telefone = telefone;
 		this.celular = celular;
 		this.tipousuario = tipousuario;
 		this.email = email;
 	}
 
-	public Usuario(String login, String senha, String nome, String cpfcnpj, String endereco, String telefone,
+	public Usuario(String login, String senha, String nome, String cpfcnpj, String telefone,
 			String celular, int tipousuario, String email) {
 
 		this.login = login;
 		this.senha = senha;
 		this.nome = nome;
 		this.cpfcnpj = cpfcnpj;
-		this.endereco = endereco;
 		this.telefone = telefone;
 		this.celular = celular;
 		this.tipousuario = tipousuario;
@@ -86,14 +83,6 @@ public class Usuario {
 		this.cpfcnpj = cpfcnpj;
 	}
 
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
 	public String getTelefone() {
 		return telefone;
 	}
@@ -125,5 +114,5 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	
 }

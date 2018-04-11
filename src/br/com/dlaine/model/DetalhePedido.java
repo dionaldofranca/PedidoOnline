@@ -15,7 +15,7 @@ public class DetalhePedido {
 		
 		this.idDetalhe = idDetalhe;
 		this.idPedido = idPedido;
-		IdProduto = idProduto;
+		this.IdProduto = idProduto;
 		this.quantidade = quantidade;
 	}
 

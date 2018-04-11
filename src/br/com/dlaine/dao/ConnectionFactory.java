@@ -1,5 +1,4 @@
 package br.com.dlaine.dao;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,7 +10,7 @@ public class ConnectionFactory {
         	Class.forName("org.postgresql.Driver");
         	String url     = "jdbc:postgresql://localhost:5432/banco_dlaine";      
             String usuario = "postgres";
-            String senha   = "0139";
+            String senha   = "7617";
             return DriverManager.getConnection(url,usuario,senha);
         } catch (SQLException e) {
         	// throw new RuntimeException(e);
